@@ -12,7 +12,8 @@
 }
 
 .App {
-  background-color: var(--bg-100);
+  /* background-color: var(--bg-100); */
+  background-color: var(--bg-200);
   color: var(--text-100);
   text-align: center;
 }
@@ -61,10 +62,13 @@
 .navbar {
   background-color: var(--primary-300); /* primary color */
   color: white;
-  padding: 10px 20px;
+  padding: 20px 20px;
   display: flex;
   justify-content: center; /* Center navbar items */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for depth */
+  display: flex;
+  justify-content: space-between; /* Adjusts children elements to be at the start and end */
+  align-items: center; /* Aligns items vertically */
 }
 
 .navbar a {
@@ -86,6 +90,30 @@
   background-color: var(--accent-200); /* Different color for active link */
   color: var(--bg-100);
   border-radius: 4px;
+}
+
+.nav-form {
+  display: flex;
+  align-items: center;
+}
+
+.nav-form input[type="text"],
+.nav-form input[type="password"] {
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.nav-form button {
+  padding: 5px 10px;
+  background-color: var(--primary-100);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.nav-form button:hover {
+  background-color: var(--primary-200);
 }
 
 .footer {
