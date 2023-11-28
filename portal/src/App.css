@@ -56,3 +56,72 @@
     transform: rotate(360deg);
   }
 }
+
+
+.navbar {
+  background-color: var(--primary-300); /* primary color */
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center; /* Center navbar items */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for depth */
+}
+
+.navbar a {
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+  background-color: var(--primary-200); /* Lighter shade for hover */
+  color: var(--bg-100); /* Text color change on hover */
+  border-radius: 4px; /* Optional: rounds the corners */
+}
+
+.navbar a.active {
+  background-color: var(--accent-200); /* Different color for active link */
+  color: var(--bg-100);
+  border-radius: 4px;
+}
+
+.footer {
+  background-color: var(--bg-300); /* Darker background */
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 60px; /* Set a fixed height for the footer */
+}
+
+main {
+  min-height: 80vh; /* Adjust as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-container {
+  text-align: center; /* Center video */
+}
+
+/* Ensure the page is scrollable if content overflows */
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.App {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
