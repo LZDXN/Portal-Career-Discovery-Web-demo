@@ -1,26 +1,69 @@
-import React from "react";
+import React, { useState } from "react";
 import "../App.css";
+import {
+  MDBContainer,
+  MDBNavbar,
+  MDBNavbarBrand,
+  MDBNavbarToggler,
+  MDBIcon,
+  MDBNavbarNav,
+  MDBNavbarItem,
+  MDBNavbarLink,
+  MDBCollapse,
+} from "mdb-react-ui-kit";
 
 const Navbar = () => {
+  const [openBasic, setOpenBasic] = useState(false);
+
   return (
-    <nav className="navbar">
-      <div className="nav-links">
-        <img src="/Portal.png" alt="logo" style={{ width: "100px" }} />
-        <a href="/">Home</a>
-        <a href="/">Explore</a>
-        <a href="/">Profile</a>
-        <a href="/">Job</a>
-        <a href="/">About</a>
-        {/* Other navigation links here */}
-      </div>
-      <div className="nav-form">
-        <input type="text" placeholder="Username" />
-        <input type="password" placeholder="Password" />
-        {/* <button type="submit">Sign In</button> */}
-        <button type="submit">Register</button>
-        {/* Or a 'Register' button as needed */}
-      </div>
-    </nav>
+    <MDBContainer>
+      <MDBNavbar expand="lg" light bgColor="light">
+        <MDBContainer fluid>
+          <MDBNavbarBrand href="#">
+            <img src="/Portal.png" alt="logo" className="App-logo" href="/" />
+          </MDBNavbarBrand>
+
+          <MDBNavbarToggler
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            onClick={() => setOpenBasic(!openBasic)}
+          >
+            <MDBIcon icon="bars" fas />
+          </MDBNavbarToggler>
+
+          <MDBCollapse navbar open={openBasic}>
+            <MDBNavbarNav className="mr-auto mb-2 mb-lg-0">
+              <MDBNavbarItem>
+                <MDBNavbarLink active aria-current="page" href="#">
+                  Home
+                </MDBNavbarLink>
+              </MDBNavbarItem>
+              <MDBNavbarItem>
+                <MDBNavbarLink active aria-current="page" href="#">
+                  Explore
+                </MDBNavbarLink>
+              </MDBNavbarItem>
+              <MDBNavbarItem>
+                <MDBNavbarLink active aria-current="page" href="#">
+                  Profiles
+                </MDBNavbarLink>
+              </MDBNavbarItem>
+              <MDBNavbarItem>
+                <MDBNavbarLink active aria-current="page" href="#">
+                  Jobs
+                </MDBNavbarLink>
+              </MDBNavbarItem>
+              <MDBNavbarItem>
+                <MDBNavbarLink active aria-current="page" href="#">
+                  About us
+                </MDBNavbarLink>
+              </MDBNavbarItem>
+            </MDBNavbarNav>
+          </MDBCollapse>
+        </MDBContainer>
+      </MDBNavbar>
+    </MDBContainer>
   );
 };
 

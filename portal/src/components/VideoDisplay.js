@@ -1,14 +1,16 @@
 import React from "react";
-import "../App.css";
+import { MDBContainer } from "mdb-react-ui-kit";
 
 const VideoDisplay = () => {
   return (
-    <div className="video-container">
-      <video width="60%" controls muted autoplay>
-        <source src="/demo/WashU_ads.mp4" type="video/mp4" />
+    // <div className="ratio ratio-16x9">
+    <MDBContainer>
+      <video width="100%" controls muted autoplay>
+        <source src="/demo/portal_pre_video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-    </div>
+    </MDBContainer>
+    // </div>
   );
 };
 

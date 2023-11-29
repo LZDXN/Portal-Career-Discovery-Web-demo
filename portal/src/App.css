@@ -11,64 +11,38 @@
   --bg-300: #cbcbcb;
 }
 
-.App {
-  /* background-color: var(--bg-100); */
-  background-color: var(--bg-200);
-  color: var(--text-100);
-  text-align: center;
+body, html {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  
 }
 
-.video-container {
+.App {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
   background-color: var(--bg-200);
-  padding: 20px;
+  /* color: var(--text-100); */
+  /* text-align: center; */
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: var(--primary-300); /* Updated color */
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: var(--bg-100); /* Updated color */
+  height: 30px;
 }
 
 .App-link {
-  color: var(--accent-100); /* Updated color */
+  color: var(--accent-100);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
+/* 
 .navbar {
   background-color: var(--bg-100);
   color: var(--primary-100);
-  padding: 20px 20px;
+  padding: 20px;
   display: flex;
-  justify-content: center; /* Center navbar items */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for depth */
-  display: flex;
-  justify-content: space-between; /* Adjusts children elements to be at the start and end */
-  align-items: center; /* Aligns items vertically */
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar a {
@@ -81,13 +55,13 @@
 
 .navbar a:hover,
 .navbar a:focus {
-  background-color: var(--primary-300); /* Lighter shade for hover */
-  color: var(--bg-100); /* Text color change on hover */
-  border-radius: 4px; /* Optional: rounds the corners */
+  background-color: var(--primary-300);
+  color: var(--bg-100);
+  border-radius: 4px;
 }
 
 .navbar a.active {
-  background-color: var(--accent-200); /* Different color for active link */
+  background-color: var(--accent-200);
   color: var(--bg-100);
   border-radius: 4px;
 }
@@ -101,7 +75,7 @@
 .nav-form input[type="password"] {
   margin-right: 10px;
   padding: 5px;
-}
+} */
 
 .nav-form button {
   padding: 5px 10px;
@@ -117,39 +91,141 @@
 }
 
 .footer {
-  background-color: var(--bg-300); /* Darker background */
+  background-color: var(--bg-300);
   color: white;
   padding: 10px 20px;
   text-align: center;
-  display: flex; /* Use flexbox */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  height: 60px; /* Set a fixed height for the footer */
-}
-
-main {
-  min-height: 80vh; /* Adjust as needed */
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.video-container {
-  text-align: center; /* Center video */
-}
-
-/* Ensure the page is scrollable if content overflows */
-body, html {
-  height: 100%;
-  margin: 0;
-}
-
-.App {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
+  height: 60px;
 }
 
 main {
-  flex: 1;
+  display: flex;
+  /* flex-direction: row; */
+  /* flex-direction: column; */
+  justify-content: space-around; /* Spaces children with equal space around them */
+  align-items: flex-start; /* Aligns children at the start of the cross axis */
+
+  padding-top: 10%;
+  padding-bottom: 11%;
+  
+}
+
+
+/* Individual container styling */
+.description-container,
+.video-container {
+  flex: 1; /* Each child will take up equal space */
+  max-width: 45%; /* Each child can take up to half of the parent's width */
+}
+
+.video-container {
+  background-color: var(--bg-200);
+  padding: 20px;
+  text-align: center;
+}
+
+.description-title {
+  text-align: center;
+  font-size: 32px;
+  color: var(--primary-300);
+}
+
+.description-body {
+  text-align: justify;
+  font-size: 18px;
+  color: var(--primary-200);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-form input[type="text"],
+  .nav-form input[type="password"],
+  .nav-form button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+
+  .App-header,
+  .video-container {
+    padding: 10px;
+  }
+
+  .App-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50%;
+    width: 50%;
+  }
+  
+
+
+  .description-container,
+  .video-container {
+    max-width: 100%; /* Each child can take up the full width of the parent */
+  }
+
+  .video-container video {
+    width: 100%; /* Make the video responsive */
+    height: auto; /* Maintain aspect ratio */
+  }
+}
+/* Responsive adjustments for phones */
+@media (max-width: 480px) {
+  .App-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50%;
+    width: 50%;
+  }
+  .navbar {
+    flex-direction: column;
+  }
+
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-links.visible {
+    display: flex;
+  }
+
+  .nav-toggle-button {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .nav-form input[type="text"],
+  .nav-form input[type="password"],
+  .nav-form button {
+    display: none; /* Hide text boxes */
+  }
+
+  .video-container {
+    width: 100%; /* Full-width video */
+  }
+
+  .video-container video {
+    width: 100%;
+    height: auto;
+  }
 }
