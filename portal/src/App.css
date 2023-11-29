@@ -60,8 +60,8 @@
 
 
 .navbar {
-  background-color: var(--primary-300); /* primary color */
-  color: white;
+  background-color: var(--bg-100);
+  color: var(--primary-100);
   padding: 20px 20px;
   display: flex;
   justify-content: center; /* Center navbar items */
@@ -72,7 +72,7 @@
 }
 
 .navbar a {
-  color: white;
+  color: var(--primary-300);
   padding: 10px 15px;
   text-decoration: none;
   margin: 0 10px;
@@ -81,7 +81,7 @@
 
 .navbar a:hover,
 .navbar a:focus {
-  background-color: var(--primary-200); /* Lighter shade for hover */
+  background-color: var(--primary-300); /* Lighter shade for hover */
   color: var(--bg-100); /* Text color change on hover */
   border-radius: 4px; /* Optional: rounds the corners */
 }
@@ -105,7 +105,7 @@
 
 .nav-form button {
   padding: 5px 10px;
-  background-color: var(--primary-100);
+  background-color: var(--primary-300);
   color: white;
   border: none;
   border-radius: 4px;
