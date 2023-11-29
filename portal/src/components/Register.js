@@ -1,6 +1,7 @@
 import React from "react";
 import {
   MDBContainer,
+  MDBTypography,
   MDBInput,
   MDBCol,
   MDBRow,
@@ -11,6 +12,7 @@ import {
 const Register = () => {
   return (
     <MDBContainer>
+      <MDBTypography tag="h4">Interested? Join our newsletter! </MDBTypography>
       <form>
         <MDBRow className="mb-4">
           <MDBCol>
